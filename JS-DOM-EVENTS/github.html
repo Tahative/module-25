@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete</title>
+</head>
+
+<body>
+    <div id="new-text">
+        <h1 id="secret-info">My secret info</h1>
+    </div>
+    <input id="delete-confirm" placeholder="Please type 'Delete' here" type="text">
+    <br><br>
+    <button id="btn-delete" disabled>Delete</button>
+    <br><br>
+    <input id="post" placeholder="Please type to add" type="text">
+    <button id="btn-post">Post</button>
+
+    <script>
+        document.getElementById('btn-delete').addEventListener('click', function () {
+            const secretInfo = document.getElementById('secret-info');
+            secretInfo.style.display = 'none'
+        })
+        document.getElementById('delete-confirm').addEventListener('keyup', function (event) {
+            const text = event.target.value;
+            const deleteButton = document.getElementById('btn-delete')
+            if (text === 'delete') {
+                deleteButton.removeAttribute('disabled')
+            }
+            else { deleteButton.setAttribute('disabled', true) }
+        })
+        document.getElementById('btn-post').addEventListener('click', function () {
+
+            const commentBox = document.getElementById('post')
+            const newComment = commentBox.value;
+
+            const commentContainer = document.getElementById('new-text')
+            const p = document.createElement('p')
+            p.innerText = newComment;
+            commentContainer.appendChild(p);
+            commentBox.value = '';
+        })
+
+    </script>
+</body>
+
+</html>

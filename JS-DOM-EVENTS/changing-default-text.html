@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="default-text">Default Text</p>
+
+    <button id="btn-change1">change by js</button>
+    <button id="btn-change2">another change</button>
+    <button id="btn-change3">Default Text</button>
+    <script>
+        document.getElementById('btn-change1').addEventListener('click', function () {
+            const defaultText = document.getElementById('default-text');
+            defaultText.innerText = 'I am changed';           
+        })
+        document.getElementById('btn-change2').addEventListener('click', function () {
+            const defaultText = document.getElementById('default-text');
+            defaultText.innerText = 'I am very changed';           
+        })
+        document.getElementById('btn-change3').addEventListener('click', function () {
+            const defaultText = document.getElementById('default-text');
+            defaultText.innerText = 'Default Text';           
+        })
+    </script>
+</body>
+</html>

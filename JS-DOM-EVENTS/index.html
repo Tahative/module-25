@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM Events</title>
+</head>
+
+<body>
+    <h1 onclick="console.log('Events learning')">DOM er ajke special events </h1>
+    <script src=""></script>
+    <button onclick="console.log(7)">Click Me</button>
+    <button onclick="console.log(67)">Another Click</button>
+    <button id="make-goldenrod">Make Goldenrod</button>
+    <button id="make-purple">Make Purple</button>
+    <button id="make-white">Make white</button>
+    <button id="make-red" onclick="makeRed()">Make Red</button>
+    <script src="js/event.js"></script>
+    <script>
+
+        function makeRed(){
+            document.body.style.backgroundColor = 'red';
+        }
+        document.getElementById('make-goldenrod').addEventListener('click', function () {
+            document.body.style.backgroundColor = 'goldenrod';
+        })
+
+        const purpleButton = document.getElementById('make-purple');
+        purpleButton.onclick = function makePurple() {
+            document.body.style.backgroundColor = 'purple';
+        }
+        document.getElementById('make-white').addEventListener('click', function () {
+            document.body.style.backgroundColor = 'white';
+        })
+
+        
+
+    </script>
+</body>
+
+</html>
